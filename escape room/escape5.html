@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 5</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 5:</h2>
+      <p>Rudolph, el reno de la nariz roja, está preocupado porque uno de los regalos ha desaparecido de la lista de entregas mágicas. Los duendes dicen que el problema está en un pequeño fragmento de código Python que gestiona la lista de regalos, pero hay un error que hace que un regalo se pierda cada vez que ejecutan el programa. Los duendes necesitan tu ayuda para descubrir qué está mal y corregirlo para que todos los niños reciban sus regalos esta Navidad.</p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) Cambiar regalos.delete('pelota') por regalos.remove('pelota')</button>
+        <button class="option" onclick="checkAnswer('b')">b) Usar regalos.pop('pelota') en su lugar</button>
+        <button class="option" onclick="checkAnswer('c')">c) Reemplazar regalos.delete('pelota') por del regalos['pelota']</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'a'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape6.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

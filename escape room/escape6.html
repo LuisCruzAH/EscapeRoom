@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 6</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 6:</h2>
+      <p>En lo alto del Gran Árbol de Navidad, los elfos colocaron una estrella mágica que brilla con luces digitales. Pero algo salió mal: la estrella solo muestra colores al azar porque su configuración de encendido está en el formato equivocado. Para que la estrella vuelva a brillar correctamente, los duendes deben programarla con el código binario correcto. ¡Es tu tarea ayudarlos a resolver el problema!
+      </p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) 101</button>
+        <button class="option" onclick="checkAnswer('b')">b) 110</button>
+        <button class="option" onclick="checkAnswer('c')">c) 111</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'a'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape7.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

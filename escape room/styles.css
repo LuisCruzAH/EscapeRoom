@@ -1,0 +1,78 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: "🎄";
+  background-position: center;
+  background-repeat: repeat;
+}
+
+header {
+  background-color: #f54242;
+  padding: 20px;
+  border-bottom: 5px solid #feca57;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.question-area {
+  margin-top: 40px;
+}
+
+.question-area h2 {
+  color: #feca57;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+button.option {
+  padding: 10px 20px;
+  background-color: #feca57;
+  color: #1e293b;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.option:hover {
+  background-color: #f54242;
+  color: white;
+}
+
+/* Mensaje de retroalimentación */
+#feedback {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #feca57;
+  color: #1e293b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}

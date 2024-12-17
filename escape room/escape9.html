@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 9</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 9:</h2>
+      <p>Los elfos han recibido un mensaje cifrado que Santa Claus dejó en su taller para que los participantes del escape room puedan acceder a su último regalo mágico. El mensaje está en formato binario, pero los elfos no saben cómo descifrarlo. Solo alguien con habilidades especiales puede convertir el código binario en una palabra mágica que abrirá el regalo final. ¡Es tu turno de ayudar a los elfos!</p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) Santa</button>
+        <button class="option" onclick="checkAnswer('b')">b) Reno</button>
+        <button class="option" onclick="checkAnswer('c')">c) Trineo</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'a'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape10.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 4</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 4:</h2>
+      <p>Los elfos de la sastrería mágica están en problemas. Este año, el traje de Santa Claus no se ve como siempre. La chaqueta no es roja, los bordes no son blancos y ¡la barba ni siquiera aparece! Después de revisar los planos mágicos, descubrieron que hay un error en el archivo de estilos CSS encantado. Necesitan tu ayuda para encontrar el problema y corregirlo antes de que Santa se dé cuenta. ¡No hay tiempo que perder!</p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) Cambiar color: #FF0000; por color: red;</button>
+        <button class="option" onclick="checkAnswer('b')">b) Corregir borde: 5px solid white; por border: 5px solid white;</button>
+        <button class="option" onclick="checkAnswer('c')">c) Reemplazar font-size: 24px; por font-size: 2em;</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'b'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape5.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

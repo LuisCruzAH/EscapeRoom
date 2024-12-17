@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 3</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 3:</h2>
+      <p>¿En el corazón de la fábrica de juguetes de los elfos, se encuentra el gran Árbol de Navidad Encantado. Cada año, los elfos deben encender sus luces mágicas, pero este año algo salió mal: ¡los colores no se ven como deberían! Para resolver el problema, necesitas encontrar el código hexadecimal correcto para el color que ilumina el espíritu navideño.?
+        <div>
+        Los elfos están desesperados, ¡el gran Árbol de Navidad Encantado está apagado! Solo el color correcto puede devolverle la magia. En un pergamino dorado, los elfos dejaron esta pista:
+'El color que buscas brilla en cada guirnalda, en cada dulce y en cada traje de Santa.
+No es verde como el árbol, ni blanco como la nieve,
+pero si cierras los ojos y piensas en la Navidad, lo verás al instante.
+Necesitamos su código mágico de 6 caracteres,
+comienza con #FF y su fulgor se siente cálido como un abrazo.'
+
+¿Cuál es el código hexadecimal que los elfos necesitan para iluminar de nuevo el Árbol de Navidad?
+      </p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) #0000FF</button>
+        <button class="option" onclick="checkAnswer('b')">b) #00FFFF </button>
+        <button class="option" onclick="checkAnswer('c')">c) #FF0000</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'c'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape4.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

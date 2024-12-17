@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Pregunta 7</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄 Escape Room Navideño 🎄</h1>
+    <p>Responde correctamente para avanzar en el juego.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Pregunta 7:</h2>
+      <p>En el bullicioso taller del Polo Norte, los elfos trabajaban a toda velocidad para preparar la Navidad. Sin embargo, no todo iba como la seda. Uno de los elfos, Elfo Teclitas, encargado de gestionar las cartas electrónicas de los niños, había recibido una carta de un niño llamado Jaime.
+        Jaime pedía algo especial: una piñata llena de dulces y un muñeco de nieve interactivo. Pero cuando Elfo Teclitas abrió la carta en su ordenador, algo extraño ocurrió. Su pantalla mostró símbolos raros, ¡y el mensaje era ilegible
+        Elfo Teclitas se rascó la cabeza confundido. "¿Qué es esto? ¡Esto no tiene sentido! ¡Papá Noel no entenderá nada!"
+        Después de revisar, se dieron cuenta de que el problema estaba en la configuración del sistema)
+        </p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">a) Cambiar la fuente a Comic Sans</button>
+        <button class="option" onclick="checkAnswer('b')">b) Reemplazar manualmente letras con errores por caracteres ASCII</button>
+        <button class="option" onclick="checkAnswer('c')">c) Usar meta charset="UTF-8" en el HTML o configurar UTF-8 en el editor</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'c'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "¡Correcto! 🎉 Redirigiendo a la siguiente pregunta...";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape8.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "❌ Retrocediendo en el tiempo...";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Introducción</title>
+  <link rel="stylesheet" href="styles_inicio.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄🎄🎄🎄🎄 <strong>Escape Room Navideño</strong> 🎄🎄🎄🎄🎄</h1>
+    <p>Bienvenido a nuestro Escape Room Navideño!!!.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Introducción</h2>
+      <p>¡Bienvenidos al mágico Polo Norte, el corazón de la Navidad! Aquí, entre montañas cubiertas de nieve y auroras boreales que iluminan el cielo, se encuentra la legendaria fábrica de regalos de Papá Noel. Este lugar, lleno de magia y alegría, es donde los elfos trabajan incansablemente para preparar los regalos que llenarán de felicidad los hogares de todo el mundo.
+        Papá Noel está ajustando los últimos detalles en su trineo, revisando la lista de nombres y acariciando a los renos mientras los elfos se aseguran de que cada juguete, cada dulce y cada carta esté en su lugar.
+        Hoy, tienen la oportunidad única de ser parte de esta increíble misión. Pónganse cómodos, sientan el espíritu navideño y prepárense para unirse a los elfos en su trabajo más importante del año: ¡hacer que la magia de la Navidad llegue a todos los rincones del mundo!
+        </p>
+
+      <p>Vas a ayudar a Papa Noel???</p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">Si</button>
+        <button class="option" onclick="checkAnswer('b')">NO</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'a'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "Perfecto! Vamos manos a la obra";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'escape.html'; // Cambiar por el nombre del siguiente archivo
+        }, 2000);
+      } else {
+        // Si la respuesta es incorrecta
+        feedbackText.textContent = "🤣";
+        feedback.classList.remove('hidden');
+
+        // Reiniciar la página después de 5 segundos
+        setTimeout(() => {
+          window.location.href = 'https://www.youtube.com/watch?v=woySeSNBL3o'; // Cambiar por el nombre del siguiente archivo
+        }, 500);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room - Final</title>
+  <link rel="stylesheet" href="styles_inicio.css">
+  <link rel="icon" href="navidad.png">
+</head>
+<body>
+  <header>
+    <h1>🎄🎄🎄🎄🎄 <strong>Escape Room Navideño</strong> 🎄🎄🎄🎄🎄</h1>
+    <p>Bienvenido a nuestro Escape Room Navideño!!!.</p>
+  </header>
+
+  <main>
+    <div class="question-area">
+      <h2>Final</h2>
+      <p>Felicidades, Elfos Valientes! 🎉🎄
+        ¡Lo habéis logrado! Gracias a vuestra rapidez y astucia, habéis ayudado a salvar la Navidad. El trineo de Papá Noel ya está cargado y listo para viajar por todo el mundo, entregando alegría y regalos a millones de niños.
+        Los elfos de la fábrica pueden descansar tranquilos, sabiendo que los regalos están perfectamente organizados y listos para ser repartidos. Papá Noel, los renos y todos los demás en el Polo Norte están muy agradecidos por vuestra ayuda. ¡Sin ustedes, la magia de la Navidad no habría sido posible!
+        El tiempo se agotó, pero su esfuerzo ha sido más que suficiente. ¡Nos vemos en la próxima misión navideña, Elfos!
+        Que la Navidad les traiga paz, felicidad y muchos regalos.
+        ¡Feliz Navidad y que el espíritu navideño dure por siempre!
+        </p>
+
+      <div class="options">
+        <button class="option" onclick="checkAnswer('a')">🎄FELIZ NAVIDAD🎄</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de retroalimentación -->
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+    </div>
+  </main>
+
+  <script>
+    function checkAnswer(selected) {
+      let correctAnswer = 'a'; // Respuesta correcta
+      let feedback = document.getElementById('feedback');
+      let feedbackText = document.getElementById('feedback-text');
+
+      if (selected === correctAnswer) {
+        // Si la respuesta es correcta
+        feedbackText.textContent = "FELIZ NAVIDAD COMPAÑEROS Y FELICIDADES POR COMPLETAR EL ESCAPE ROOM";
+        feedback.classList.remove('hidden');
+
+        // Redirigir al siguiente HTML después de 2 segundos
+        setTimeout(() => {
+          window.location.href = 'https://www.youtube.com/watch?v=RmUWWVZw28E'; // Cambiar por el nombre del siguiente archivo
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
